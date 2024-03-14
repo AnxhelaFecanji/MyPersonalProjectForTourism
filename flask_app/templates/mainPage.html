@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+    <title>Korca is Yours</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Link to Font Awesome CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+    <!-- Link to your custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">Korca is<em> Yours</em></a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="/" class="active">Home</a></li>
+                            <li><a href="/loginPage/admin">Log in as Admin</a></li>
+                            <li><a href="/loginPage/buisnessOwner">Log in as Business Owner</a></li>
+                            <li><a href="/loginPageRegister/visitor">Log in as Visitor</a></li>
+                            
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="static/images/videokryesorekorce.mp4" type="video/mp4" />
+        </video>
+
+        <div class="video-overlay header-text">
+            <div class="caption">
+                <h6>Te gjitha rruget te cojne ne Korce...</h6>
+                <h2><em>Explore</em> Korca with us!</h2>
+    
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+    
+    <!-- ***** Testimonials Item Start ***** -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>Read our <em>Testimonials</em></h2>
+                        <img src="{{ url_for('static', filename='images/line-dec.png') }}" alt="waves">
+                        
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="features-items">
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{{ url_for('static', filename='images/features-first-icon.png') }}" alt="First One">
+                            </div>
+                            <div class="right-content">
+                                <h4>Klea Qylafi</h4>
+                                <p><em>"The right application to get the necessary information about the city."</em></p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{{ url_for('static', filename='images/features-first-icon.png') }}" alt="second one">
+                            </div>
+                            <div class="right-content">
+                                <h4>Rexhina Manoku</h4>
+                                <p><em>"Contains tourist spots and everything else a tourist needs."</em></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="features-items">
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{{ url_for('static', filename='images/features-first-icon.png') }}" alt="fourth muscle">
+
+                            </div>
+                            <div class="right-content">
+                                <h4>Megi Pinderi</h4>
+                                <p><em>"Easy to use and application that helps you easily find everything you need in the city."</em></p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="{{ url_for('static', filename='images/features-first-icon.png') }}" alt="training fifth">
+
+                            </div>
+                            <div class="right-content">
+                                <h4>Xhorxhina Manoku</h4>
+                                <p><em>"A contribution to improving the tourist experience in the most beautiful city in Albania."</em></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <br>
+
+        
+        </div>
+    </section>
+    <!-- ***** Testimonials Item End ***** -->
+
+
+    <section class="section section-bg" id="schedule" style="background-image: url({{ url_for('static', filename='images/fotodebore.jpeg') }})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading dark-bg">
+                        <h2>Read <em>About Us</em></h2>
+                        <img src="static/images/line-dec.png" alt="">
+                        <p>Empowering Tourism in Korce through Innovative Web Application.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cta-content text-center">
+                        <p>Anxhela Fecanji, a talented graduate from the European University of Tirana, has embarked on a mission to showcase the hidden gems of Korce, Albania, through her innovative web application. Currently a student at the American Coding Dojo academy, she collaborated with BetaPlan in Albania to create a platform dedicated to promoting tourism in her beloved city.</p>
+                        <p>Korce, a small city boasting rich historical and cultural heritage, captivates visitors with its vibrant traditions and welcoming atmosphere. Despite its size, Korce stands as one of Albania's top tourist destinations, drawing both locals and foreigners alike. The city's allure transcends seasons, yet it holds a unique charm during the winter months, making it a must-visit destination.</p>
+                        <p>The web application curated by Anxhela Fecanji serves as a comprehensive guide for tourists, offering insights into local attractions, activities, accommodations, dining options, and more. From historical landmarks to cozy cafes, the platform provides a glimpse into the diverse offerings of Korce, inviting visitors to immerse themselves in its cultural tapestry.</p>
+                        <p>Through her dedication and expertise in Information Technology, Anxhela Fecanji has crafted a digital gateway that not only promotes tourism but also celebrates the essence of Korce.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        Copyright © 2024 Anxhela Fecanji
+                        - Powered by: <a href="https://www.codingdojo.com/">codingdojo.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- jQuery -->
+<script src="{{ url_for('static', filename='js/jquery-2.1.0.min.js') }}"></script>
+
+<!-- Bootstrap -->
+<script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<!-- Plugins -->
+<script src="{{ url_for('static', filename='js/scrollreveal.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/imgfix.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/mixitup.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/accordions.js') }}"></script>
+
+<!-- Global Init -->
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+  </body>
+</html>

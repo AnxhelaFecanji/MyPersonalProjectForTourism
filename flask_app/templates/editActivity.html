@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+    <title>Korca is Yours</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Link to Font Awesome CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+    <!-- Link to your custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/admin/dashboard" class="logo">Korca is<em> Yours</em></a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="/admin/dashboard" class="active">Dashboard</a></li>
+                            <li><a href="/admin/businessOwner/new">Add Business Owner</a></li>
+                            <li><a href="/admin/attraction/new">Add Attraction</a></li>
+                            <li><a href="/admin/activity/new">Add Activity</a></li>
+                            <li><a href="/logout">Log out</a></li> 
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+ <!-- ***** Call to Action Start ***** -->
+ <section class="section section-bg" id="call-to-action"style="background-image: url({{ url_for('static', filename='images/fotokatedrale.jpeg') }})"
+ >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <br>
+                    <br>
+                    <h2><em>Edit {{activity.activity}}</em></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Call to Action End ***** -->
+<form action="/admin/activity/update/{{activity.id}}" method="post" class="w-50 m-auto mt-5" enctype="multipart/form-data">
+    {% with messages = get_flashed_messages(category_filter=["activitySuccessUpdated"]) %}
+    {% if messages %}
+
+        {% for message in messages %}
+        <p class="text-success text-center">{{ message }}</p>
+        {% endfor %}
+
+    {% endif %}
+{% endwith %}
+<div class="mb-3 mt-3">
+    <label for="type" class="form-label">Activity</label>
+    <input type="text" name="activity" class="form-control" id="activity" value="{{activity.activity}}">
+   
+  </div>
+  {% with messages = get_flashed_messages(category_filter=["nameActivityUpdate"]) %}
+  {% if messages %}
+      
+      {% for message in messages %}
+      <p class="text-danger text-center">{{ message }}</p>
+      {% endfor %}
+      
+  {% endif %}
+  {% endwith %}
+<div class="mb-3 mt-3">
+    <label for="type" class="form-label">Activity Date</label>
+    <input type="date" name="activityDate" id="activityDate" value="{{activity.activityDate}}">
+   
+  </div>
+  {% with messages = get_flashed_messages(category_filter=["dateActivityUpdate"]) %}
+  {% if messages %}
+      
+      {% for message in messages %}
+      <p class="text-danger text-center">{{ message }}</p>
+      {% endfor %}
+      
+  {% endif %}
+  {% endwith %}
+  <div class="mb-3">
+    <label for="duration" class="form-label">Duration</label>
+    <input type="text" name="duration" class="form-control" id="duration" value="{{activity.duration}}">
+   
+  </div>
+  {% with messages = get_flashed_messages(category_filter=["durationActivityUpdate"]) %}
+  {% if messages %}
+      
+      {% for message in messages %}
+      <p class="text-danger text-center">{{ message }}</p>
+      {% endfor %}
+      
+  {% endif %}
+  {% endwith %}
+
+  <div class="mb-3">
+    <label for="location" class="form-label">Location</label>
+    <input type="text" name="location" class="form-control" id="location" value="{{activity.location}}">
+   
+  </div>
+  {% with messages = get_flashed_messages(category_filter=["locationActivityUpdate"]) %}
+  {% if messages %}
+      
+      {% for message in messages %}
+      <p class="text-danger text-center">{{ message }}</p>
+      {% endfor %}
+      
+  {% endif %}
+  {% endwith %}
+
+<div class="mb-3">
+  <label for="description" class="form-label">Description:</label>
+  <textarea name="description" id="description" class="form-control" cols="30" rows="3">{{activity.description}}</textarea>
+</div>
+{% with messages = get_flashed_messages(category_filter=["descriptioActivityUpdate"]) %}
+{% if messages %}
+    
+    {% for message in messages %}
+    <p class="text-danger text-center">{{ message }}</p>
+    {% endfor %}
+    
+{% endif %}
+{% endwith %}
+
+<div class="mb-3">
+    <label for="images" class="form-label">Upload images</label>
+    <input type="file" name="images" class="form-control" id="images" multiple>
+</div>
+
+  {% with messages = get_flashed_messages(category_filter=["imagesActivityupdated"]) %}
+  {% if messages %}
+      
+      {% for message in messages %}
+      <p class="text-danger text-center">{{ message }}</p>
+      {% endfor %}
+      
+  {% endif %}
+  {% endwith %}
+
+
+
+<button type="submit" class="btn btn-primary">Update</button>
+</form>
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        Copyright © 2024 Anxhela Fecanji
+                        - Powered by: <a href="https://www.codingdojo.com/">codingdojo.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- jQuery -->
+<script src="{{ url_for('static', filename='js/jquery-2.1.0.min.js') }}"></script>
+
+<!-- Bootstrap -->
+<script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<!-- Plugins -->
+<script src="{{ url_for('static', filename='js/scrollreveal.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/imgfix.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/mixitup.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/accordions.js') }}"></script>
+
+<!-- Global Init -->
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+    <title>Korca is Yours</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Link to Font Awesome CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+    <!-- Link to your custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">Korca is<em> Yours</em></a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/loginPage/admin">Log in as Admin</a></li>
+                            <li><a href="/loginPage/buisnessOwner" class="active">Log in as Business Owner</a></li>
+                            <li><a href="/loginPageRegister/visitor">Log in as Visitor</a></li>
+                            
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+  
+    
+    <section class="section section-bg" id="call-to-action" style="background-image: url({{ url_for('static', filename='images/fotobulevardidebore.jpeg') }})">
+        <div class="container">
+            <div class="row">
+                    
+                
+                <form action="/login/businessOwner" method="post" class="w-50 m-auto mt-5">
+                    <div class="mb-3">
+                      <label for="email" class="form-label"></label>
+                      <input type="email" name="email" class="form-control" id="email" placeholder="Email address">
+                     
+                    </div>
+                    {% with messages = get_flashed_messages(category_filter=["ownerEmailLogin"]) %}
+                      {% if messages %}
+                          
+                          {% for message in messages %}
+                          <p class="text-danger text-center">{{ message }}</p>
+                          {% endfor %}
+                          
+                      {% endif %}
+                      {% endwith %}
+                    <div class="mb-3">
+                      <label for="password" class="form-label"></label>
+                      <input type="password" name="password" class="form-control" id="password"placeholder="Password">
+                    </div>
+                    {% with messages = get_flashed_messages(category_filter=["ownerPasswordLogin"]) %}
+                      {% if messages %}
+                          
+                          {% for message in messages %}
+                          <p class="text-danger text-center">{{ message }}</p>
+                          {% endfor %}
+                          
+                      {% endif %}
+                      {% endwith %}
+                    
+                    <button type="submit" class="btn btn-primary">Login</button>
+                  </form>
+                     
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br>
+
+   <!-- ***** Footer Start ***** -->
+   <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>
+                    Copyright © 2024 Anxhela Fecanji
+                    - Powered by: <a href="https://www.codingdojo.com/">codingdojo.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="{{ url_for('static', filename='js/jquery-2.1.0.min.js') }}"></script>
+
+<!-- Bootstrap -->
+<script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<!-- Plugins -->
+<script src="{{ url_for('static', filename='js/scrollreveal.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/imgfix.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/mixitup.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/accordions.js') }}"></script>
+
+<!-- Global Init -->
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+</body>
+</html>
